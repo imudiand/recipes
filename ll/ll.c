@@ -64,3 +64,13 @@ void iterative_reverse(node **head) {
 	*head=prev;
 }
 
+node *recursive_reverse(node *prev, node *cur) {
+	if (!cur) {
+		return prev;
+	}
+
+	node *next = cur->next;
+	cur->next = prev;
+	return recursive_reverse(cur, next);
+}
+
