@@ -44,3 +44,23 @@ node *concatenate(node *l1, node *l2) {
 	iter->next = l2;
 	return l1;
 }
+
+void iterative_reverse(node **head) {
+	if (!*head) {
+		return;
+	}
+
+	node *prev = NULL;
+	node *cur = *head;
+	node *next;
+
+	while(cur) {
+		next = cur->next;
+		cur->next = prev;
+		prev=cur;
+		cur=next;
+	}
+
+	*head=prev;
+}
+
