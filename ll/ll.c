@@ -74,3 +74,12 @@ node *recursive_reverse(node *prev, node *cur) {
 	return recursive_reverse(cur, next);
 }
 
+
+void destoy(node **head) {
+	node *next;
+	while(*head) {
+		next = (*head)->next;
+		free(*head);
+		*head = next;
+	}
+}

@@ -44,5 +44,15 @@ int main(void) {
 	l2 = recursive_reverse(NULL, l1);
 	print(l2);
 
+	/* Destroy */
+	printf("=== Destroy ===\n");
+	l1 = NULL;
+	for (i=0; i<10; i++) {
+		append(&l1, i);
+	}
+	destoy(&l1);
+	if (!l1) {
+		printf("List was Destroyed\n");
+	}
 	return 0;
 }
