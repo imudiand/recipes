@@ -9,3 +9,4 @@ int atoi(const char *str);
 char *str_cpy(char *dest, const char *src);
 char upper_case(char ch);
 int is_upper_case(char ch);
+char *str_dup(char *str);

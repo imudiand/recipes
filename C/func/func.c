@@ -52,6 +52,14 @@ char *str_cpy(char *dest, const char *src) {
 	return dest;
 }
 
+char *str_dup(char *str) {
+	char *dst = (char *)malloc(sizeof(char) * strlen(str));
+	if (!dst)
+		return NULL;
+	str_cpy(dst, str);
+	return dst;
+}
+
 int str_cmp(char *s1, char *s2) {
 	while(*s1++ == *s2++) {
 		if (*s1 == '\0' && *s2 == '\0')
