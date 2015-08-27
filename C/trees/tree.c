@@ -126,3 +126,17 @@ int is_identical(node *t1, node *t2) {
 
 	return (is_root_identical & is_left_identical & is_right_identical);
 }
+
+int num_leaves(node *root) {
+	if (!root)
+		return 0;
+
+	if (!root->left && !root->right) {
+		return 1;
+	}
+
+	int num_left_leaves = num_leaves(root->left);
+	int num_right_leaves = num_leaves(root->right);
+
+	return (num_left_leaves+num_right_leaves);
+}

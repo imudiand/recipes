@@ -75,4 +75,10 @@ int main(void) {
 		printf("%s\n", "Trees are not identical");
 	printf("\n");
 
+
+	printf("=== Num of Leaves ===\n");
+	int leaves = num_leaves(t1);
+	printf("%d\n", leaves);
+	printf("\n");
+
 }
