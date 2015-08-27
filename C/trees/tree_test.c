@@ -58,4 +58,21 @@ int main(void) {
 	print_inorder_traverse(t1);
 	printf("\n");
 
+
+	printf("=== Is Identical ===\n");
+	t1=NULL;
+	t2=NULL;
+
+	for (i=0; i<10; i++) {
+		recursive_insert(&t1,tree_values[i]);
+		recursive_insert(&t2,tree_values[i]);
+	}
+
+	int identical = is_identical(t1, t2);
+	if (identical)
+		printf("%s\n", "Trees are identical");
+	else
+		printf("%s\n", "Trees are not identical");
+	printf("\n");
+
 }

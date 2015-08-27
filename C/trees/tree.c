@@ -103,3 +103,26 @@ void destroy(node **root) {
 	free(*root);
 	*root = NULL;
 }
+
+int is_identical(node *t1, node *t2) {
+	if (!t1 && !t2)
+		return 1;
+	else if (!t1)
+		return 0;
+	else if (!t2)
+		return 0;
+
+	int is_root_identical = 0;
+	int is_left_identical = 0;
+	int is_right_identical = 0;
+
+
+	if (t1->value == t2->value) {
+		is_root_identical = 1;
+	}
+
+	is_left_identical = is_identical(t1->left, t2->left);
+	is_right_identical = is_identical(t1->right, t2->right);
+
+	return (is_root_identical & is_left_identical & is_right_identical);
+}

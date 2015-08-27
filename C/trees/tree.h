@@ -20,3 +20,4 @@ node *copy(node *root);
 int depth(node *root);
 int num_nodes(node *root);
 void destroy(node **root);
+int is_identical(node *t1, node *t2);
