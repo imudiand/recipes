@@ -18,3 +18,5 @@ void print_postorder_traverse(node *root);
 
 node *copy(node *root);
 int depth(node *root);
+int num_nodes(node *root);
+void destroy(node **root);

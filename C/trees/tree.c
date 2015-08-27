@@ -84,3 +84,22 @@ int depth(node *root) {
 	int right_depth = 1 + depth(root->right);
 	return max(left_depth, right_depth);
 }
+
+int num_nodes(node *root) {
+	if(!root) {
+		return 0;
+	}
+
+	int num_left_nodes = num_nodes(root->left);
+	int num_right_nodes = num_nodes(root->right);
+	return (num_left_nodes + num_right_nodes + 1);
+}
+
+void destroy(node **root) {
+	if (!*root)
+		return;
+	destroy(&(*root)->left);
+	destroy(&(*root)->right);
+	free(*root);
+	*root = NULL;
+}

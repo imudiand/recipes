@@ -46,4 +46,16 @@ int main(void) {
 	int _d = depth(t1);
 	printf("%d\n", _d);
 	printf("\n");
+
+
+	printf("=== Num Nodes ===\n");
+	int _n = num_nodes(t1);
+	printf("%d\n", _n);
+	printf("\n");
+
+	printf("=== Destroy ===\n");
+	destroy(&t1);
+	print_inorder_traverse(t1);
+	printf("\n");
+
 }
