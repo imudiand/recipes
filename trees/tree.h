@@ -1,0 +1,15 @@
+#include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+typedef struct Node node;
+struct Node {
+	int value;
+	node *left;
+	node *right;
+};
+
+void recursive_insert(node **root, int value);
+void print_inorder_traverse(node *root);
+void print_preorder_traverse(node *root);
+void print_postorder_traverse(node *root);
