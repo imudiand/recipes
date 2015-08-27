@@ -10,6 +10,7 @@ struct Node {
 };
 
 void recursive_insert(node **root, int value);
+node *recursive_search(node *root, int value);
 void print_inorder_traverse(node *root);
 void print_preorder_traverse(node *root);
 void print_postorder_traverse(node *root);

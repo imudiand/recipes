@@ -26,4 +26,12 @@ int main(void) {
 	printf("=== PostOrder Traversal ===\n");
 	print_postorder_traverse(t1);
 	printf("\n");
+
+	node *elem;
+	printf("=== Recursive Search ===\n");
+	elem = recursive_search(t1, 5);
+	printf("%d\n", elem->value);
+	printf("%d\n", elem->left->value);
+	printf("%d\n", elem->right->value);
+	printf("\n");
 }

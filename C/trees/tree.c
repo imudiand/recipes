@@ -21,6 +21,20 @@ void recursive_insert(node **root, int value){
 	}
 }
 
+node *recursive_search(node *root, int value){
+	if (!root)
+		return root;
+
+	if (root->value == value) {
+		return root;
+	} else if (root->value > value) {
+		return recursive_search(root->left, value);
+	} else {
+		return recursive_search(root->right, value);
+	}
+}
+
+
 void print_inorder_traverse(node *root) {
 	if (!root)
 		return;
