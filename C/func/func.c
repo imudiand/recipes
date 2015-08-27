@@ -52,6 +52,13 @@ char *str_cpy(char *dest, const char *src) {
 	return dest;
 }
 
+int str_len(char *str) {
+	int len = 0;
+	while(*str++ != '\0')
+		len++;
+	return len;
+}
+
 char *str_dup(char *str) {
 	char *dst = (char *)malloc(sizeof(char) * strlen(str));
 	if (!dst)
@@ -80,3 +87,4 @@ int is_upper_case(char ch) {
 		return 1;
 	return 0;
 }
+

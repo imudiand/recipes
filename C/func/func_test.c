@@ -34,6 +34,8 @@ int main(void) {
     if (0 == res)
     	printf("%s\n", "Strings are equal");
 
+    printf("%d\n", str_len(strbuff));
+
     char ch = 'f';
     char new_ch;
     new_ch = upper_case(ch);
@@ -43,8 +45,6 @@ int main(void) {
     	printf("%s\n", "Upper case");
    	if (!is_upper_case(ch))
     	printf("%s\n", "Lower case");
-
-
 
 	return 0;
 }
