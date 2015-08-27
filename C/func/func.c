@@ -59,3 +59,10 @@ int str_cmp(char *s1, char *s2) {
 	}
 	return (*s1-*s2);
 }
+
+char upper_case(char ch) {
+	if ('z' >= ch && ch >= 'a') {
+		ch = ch - 'a' + 'A';
+	}
+	return ch;
+}

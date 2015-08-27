@@ -31,6 +31,10 @@ int main(void) {
     if (0 == res)
     	printf("%s\n", "Strings are equal");
 
+    char ch = 'f';
+    char new_ch;
+    new_ch = upper_case(ch);
+    printf("%c\n", new_ch);
 
 	return 0;
 }
