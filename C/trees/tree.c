@@ -60,3 +60,27 @@ void print_postorder_traverse(node *root) {
 	print_postorder_traverse(root->right);
 	printf("%d", root->value);
 }
+
+node *copy(node *root) {
+	if (!root)
+		return root;
+	node *elem = (node *)malloc(sizeof(node));
+	elem->value = root->value;
+	elem->left = copy(root->left);
+	elem->right = copy(root->right);
+	return elem;
+}
+
+int max(int a, int b) {
+	return (a>b?a:b);
+}
+
+
+int depth(node *root) {
+	if (!root)
+		return 0;
+
+	int left_depth = 1 + depth(root->left);
+	int right_depth = 1 + depth(root->right);
+	return max(left_depth, right_depth);
+}

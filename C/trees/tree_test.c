@@ -34,4 +34,16 @@ int main(void) {
 	printf("%d\n", elem->left->value);
 	printf("%d\n", elem->right->value);
 	printf("\n");
+
+	printf("=== Copy Tree ===\n");
+	t2=copy(t1);
+	print_inorder_traverse(t1);
+	printf("\n");
+	print_inorder_traverse(t2);
+	printf("\n");
+
+	printf("=== Depth ===\n");
+	int _d = depth(t1);
+	printf("%d\n", _d);
+	printf("\n");
 }
