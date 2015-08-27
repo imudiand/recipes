@@ -83,3 +83,28 @@ void destoy(node **head) {
 		*head = next;
 	}
 }
+
+void delete(node **head, int value) {
+	if (!*head)
+		return;
+
+	node *tmp = NULL;
+	if ((*head)->value == value) {
+		tmp = *head;
+		(*head) = (*head)->next;
+		free(tmp);
+		return;
+	}
+
+	node *iter = *head;
+
+	while(iter->next) {
+		if (iter->next->value == value) {
+			tmp = iter->next;
+			iter->next = tmp->next;
+			free(tmp);
+		} else {
+			iter=iter->next;
+		}
+	}
+}

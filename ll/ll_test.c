@@ -54,5 +54,23 @@ int main(void) {
 	if (!l1) {
 		printf("List was Destroyed\n");
 	}
+
+	/* Delete */
+	printf("=== Delete 3, 5, 6, 9 ===\n");
+	l1 = NULL;
+	for (i=0; i<10; i++) {
+		append(&l1, i);
+	}
+	print(l1);
+	delete(&l1, 0);
+	delete(&l1, 5);
+	delete(&l1, 6);
+	delete(&l1, 8);
+	delete(&l1, 9);
+
+	print(l1);
+
+
+
 	return 0;
 }
