@@ -44,3 +44,18 @@ int atoi(const char *str) {
 		return (-1)*ret;
 	return ret;
 }
+
+char *str_cpy(char *dest, const char *src) {
+	while(*src != '\0') {
+		*dest++ = *src++;
+	}
+	return dest;
+}
+
+int str_cmp(char *s1, char *s2) {
+	while(*s1++ == *s2++) {
+		if (*s1 == '\0' && *s2 == '\0')
+			return 0;
+	}
+	return (*s1-*s2);
+}
