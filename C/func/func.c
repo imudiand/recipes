@@ -66,3 +66,9 @@ char upper_case(char ch) {
 	}
 	return ch;
 }
+
+int is_upper_case(char ch) {
+	if ('Z' >= ch && ch >= 'A')
+		return 1;
+	return 0;
+}

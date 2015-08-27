@@ -36,5 +36,10 @@ int main(void) {
     new_ch = upper_case(ch);
     printf("%c\n", new_ch);
 
+    if (is_upper_case(new_ch))
+    	printf("%s\n", "Upper case");
+   	if (!is_upper_case(ch))
+    	printf("%s\n", "Lower case");
+
 	return 0;
 }
