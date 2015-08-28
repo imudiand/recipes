@@ -9,12 +9,18 @@ def fib(n):
 def main():
 	parser = ArgumentParser()
 
-	parser.add_argument("num", type=int)
+	parser.add_argument("num", help="position where fibonacci" + \
+		"number is needed", type=int)
+	parser.add_argument("-o", "--output", help="Output the result" +\
+		"to a file", action="store_true")
 	args = parser.parse_args()
 
 
 	result = fib(args.num)
 	print "The "+str(args.num)+"th fibonacci number is "+str(result)
+	if args.output:
+		f = open("fib.txt", 'a')
+		f.write(str(result)+"\n")
 
 if __name__ == "__main__":
 	main()
