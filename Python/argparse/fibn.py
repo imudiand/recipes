@@ -16,11 +16,21 @@ def main():
 	# Add an optional argument called output
 	parser.add_argument("-o", "--output", help="Output the result " +\
 		"to a file", action="store_true")
+
+	# Add a mutually exclusive group for 2 new arguments
+	group = parser.add_mutually_exclusive_group()
+	group.add_argument("-v", "--verbose", help="Print verbose result", action="store_true")
+	group.add_argument("-q", "--quiet", help="Only print the result", action="store_true")
+
 	args = parser.parse_args()
 
-
 	result = fib(args.num)
-	print "The "+str(args.num)+"th fibonacci number is "+str(result)
+	if args.verbose:
+		print "The "+str(args.num)+"th fibonacci number is "+str(result)
+	elif args.quiet:
+		print result
+	else:
+		print "fib("+str(args.num)+") = "+str(result)
 	if args.output:
 		f = open("fib.txt", 'a')
 		f.write(str(result)+"\n")
