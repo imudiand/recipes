@@ -9,9 +9,12 @@ def fib(n):
 def main():
 	parser = ArgumentParser()
 
+	# Add a required argument called num
 	parser.add_argument("num", help="position where fibonacci" + \
 		"number is needed", type=int)
-	parser.add_argument("-o", "--output", help="Output the result" +\
+
+	# Add an optional argument called output
+	parser.add_argument("-o", "--output", help="Output the result " +\
 		"to a file", action="store_true")
 	args = parser.parse_args()
 
