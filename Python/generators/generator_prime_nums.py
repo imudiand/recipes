@@ -23,10 +23,9 @@ def get_primes_generator_function(start=0, end=100):
 			yield start
 		start += 1
 
-# Generator (its created from the generator function)
 def get_primes(start=0, end=100):
 	prime_numbers_list = []
-	for item in get_primes_generator_function(start, end):
+	for item in get_primes_generator_function(start, end): # Generator
 		prime_numbers_list.append(item)
 	return prime_numbers_list
 
