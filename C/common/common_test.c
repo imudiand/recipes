@@ -8,4 +8,12 @@ int main(void) {
 	printf("%s\n", "--- x^n ---");
 	printf("%f\n", x_power_n_iterative(2,-4));
 	printf("%f\n", x_power_n_iterative(2,4));
+
+	printf("%s\n", "--- x^n ---");
+	printf("%f\n", x_power_n_recursive(2,-4));
+	printf("%f\n", x_power_n_recursive(2,4));
+
+	printf("%s\n", "--- x^n ---");
+	printf("%f\n", x_power_n_recursive_div_conquer(2,-4));
+	printf("%f\n", x_power_n_recursive_div_conquer(2,4));
 }
