@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stddef.h>
 
 /* Find offset address of an element in a struct */
 #define offset_addr(Struct, Elem)	(&((Struct *)0)->Elem)
@@ -15,13 +15,20 @@ struct Node {
 
 int main() {
 
+	printf("%s\n", "--- Find Offset address ---");
 	printf("%p\n", offset_addr(struct Node, value1));
 	printf("%p\n", offset_addr(struct Node, value2));
 	printf("%p\n", offset_addr(struct Node, value3));
 
+	printf("%s\n", "--- Find Offset ---");
 	printf("%d\n", offset(struct Node, value1));
 	printf("%d\n", offset(struct Node, value2));
 	printf("%d\n", offset(struct Node, value3));
+
+	printf("%s\n", "--- Find Offset using offset() func from stddef.h ---");
+	printf("%d\n", offsetof(struct Node, value1));
+	printf("%d\n", offsetof(struct Node, value2));
+	printf("%d\n", offsetof(struct Node, value3));
 
 	return 0;
 }
