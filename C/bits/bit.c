@@ -42,6 +42,12 @@ int merge_bits(int a, int b, int mask) {
 	return (a & ~mask) | (b & mask);
 }
 
+void swap(int *a, int *b) {
+	*a ^= *b;
+	*b ^= *a;
+	*a ^= *b;
+}
+
 int num_set_bits(int num) {
 	int count = 0;
 	while(num) {
@@ -58,12 +64,28 @@ int num_set_bits(int num) {
 #define B6(n)	B4(n),	B4(n+1),	B4(n+1),	B4(n+2)
 #define B8(n)	B6(n),	B6(n+1),	B6(n+1),	B6(n+2)
 
-/* 4**4 = 256 */
+/* 4*4 = 256 ==> hence use char */
 static const unsigned char set_bits_lookup[256] = {B8(0)};
 
 unsigned int num_set_bits_lookup(int num) {
 	unsigned int count;
 	count = set_bits_lookup[num & 0xff] + set_bits_lookup[num>>8 & 0xff] + set_bits_lookup[num>>16 & 0xff] + set_bits_lookup[num>>24 & 0xff];
+	return count;
+}
+
+
+
+#define P2(n)	n,	n^1,	n^1,	n
+#define P4(n)	P2(n),	P2(n^1),	P2(n^1),	P2(n)
+#define P6(n)	P4(n),	P4(n^1),	P4(n^1),	P4(n)
+#define P8(n)	P6(n),	P6(n^1),	P6(n^1),	P6(n)
+
+/* 4*4 = 256 ==> hence use char */
+static unsigned char parity_lookup[256] = {P8(0)};
+
+unsigned int num_of_parity_bits(int num) {
+	unsigned int count;
+	count = parity_lookup[num & 0xff] ^ parity_lookup[num>>8 & 0xff] ^ parity_lookup[num>>16 & 0xff] ^ parity_lookup[num>>24 & 0xff];
 	return count;
 }
 

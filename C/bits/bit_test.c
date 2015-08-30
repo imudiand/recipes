@@ -51,5 +51,18 @@ int main(void) {
 	printf("%d\n", num_set_bits_lookup(8));
 	printf("%d\n", num_set_bits_lookup(31));
 
+	printf("%s\n", "--- Count parity bits with Lookup table ---");
+	printf("%d\n", num_of_parity_bits(8));
+	printf("%d\n", num_of_parity_bits(31));
+	printf("%d\n", num_of_parity_bits(15));
+
+	printf("%s\n", "--- swap integers ---");
+	int a = 4, b = 7;
+	printf("%d, %d\n", a, b);
+	swap(&a, &b);
+	printf("%d, %d\n", a, b);
+
+
+
 	return 0;
 }

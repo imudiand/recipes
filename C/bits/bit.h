@@ -15,3 +15,5 @@ int max(int a, int b);
 int merge_bits(int a, int b, int mask);
 int num_set_bits(int num);
 unsigned int num_set_bits_lookup(int num);
+unsigned int num_of_parity_bits(int num);
+void swap(int *a, int *b);
