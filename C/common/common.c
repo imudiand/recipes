@@ -155,3 +155,10 @@ void endianness(int num) {
 		printf("%s\n", "Big Engian");
 	}
 }
+
+int max_of_three(int a, int b, int c) {
+
+	return ((a>b)?(a>c)?a:c:(b>c)?b:c);
+
+
+}

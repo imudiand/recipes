@@ -11,3 +11,4 @@ long max_subarray(int *list, int size);
 int fib_iterative(int num);
 int fib_recursive(int num);
 void endianness(int num);
+int max_of_three(int a, int b, int c);

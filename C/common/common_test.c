@@ -30,5 +30,7 @@ int main(void) {
 	printf("%s\n", "--- endianness ---\n");
 	endianness(1);
 
+	printf("%s\n", "--- max of 3 ---\n");
+	printf("%d\n", max_of_three(7, 19, 11));
 	return 0;
 }
