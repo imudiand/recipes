@@ -157,8 +157,63 @@ void endianness(int num) {
 }
 
 int max_of_three(int a, int b, int c) {
-
 	return ((a>b)?(a>c)?a:c:(b>c)?b:c);
+}
 
 
+int dymanic_allocations(void) {
+	int i,j;
+
+	int list_size = 10;
+	int *array_1D = (int *)malloc(sizeof(int)*list_size);
+
+	int row = 5;
+	int column = 10;
+	int **array_2D = (int **)malloc(sizeof(int*)*row);
+	for (i=0; i<row; i++){
+		array_2D[i] = (int *)malloc(sizeof(int)*column);
+	}
+
+	int x = 5, y = 10, z = 15;
+	int ***array_3D = (int ***)malloc(sizeof(int **)*x);
+	for(i=0; i<x; i++) {
+		array_3D[i] = (int **)malloc(sizeof(int *)*y);
+	}
+
+	for(i=0,j=0; i<x,j<y; i++,j++) {
+		array_3D[i][j] = (int *)malloc(sizeof(int) * z);
+	}
+}
+
+
+/*
+	(mxk)x(kxn) = (mxn)
+*/
+#define X 3
+#define Y 4
+/* XxY YxZ = XxZ */
+int matrix_mul(int a[X][Y], int b[Y][X], int c[X][Y]) {
+	int x,y,z;
+
+	//memset c to 0
+
+	for (x=0; x<X; x++) {
+		for (y=0; y<Y; y++) {
+			c[x][y] += (a[x][y] * b[y][x]);
+		}
+	}
+
+}
+
+
+/* Palindromes */
+unsigned int palindrome(char *str) {
+	int len = strlen(str)-1;
+	char *invstr = (char *)str+len;
+
+	while(*str++ == *invstr--){
+		if (*str == '\0')
+			return 1;
+	}
+	return 0;
 }

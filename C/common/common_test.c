@@ -32,5 +32,11 @@ int main(void) {
 
 	printf("%s\n", "--- max of 3 ---\n");
 	printf("%d\n", max_of_three(7, 19, 11));
+
+	printf("%s\n", "--- Palindrome ---\n");
+	printf("%d\n", palindrome("Harshit"));
+	printf("%d\n", palindrome("kabbak"));
+
+
 	return 0;
 }

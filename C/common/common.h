@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
+#include <string.h>
 
 int factorial_iterative(int num);
 int factorial_recursive(int num);
@@ -12,3 +13,4 @@ int fib_iterative(int num);
 int fib_recursive(int num);
 void endianness(int num);
 int max_of_three(int a, int b, int c);
+unsigned int palindrome(char *str);
