@@ -88,3 +88,18 @@ double x_power_n_recursive_div_conquer(float x, int n) {
 	}
 	return res;
 }
+
+long max_subarray(int *list, int size) {
+	int max_num = 0;
+	int max_in_iter = 0;
+	int i,j;
+
+	for(i=0; i<(size-1); i++) {
+		max_in_iter = 0;
+		for(j=i; j<(size-1); j++) {
+			max_in_iter += list[j];
+			max_num = (max_num>max_in_iter)?max_num:max_in_iter;
+		}
+	}
+	return max_num;
+}

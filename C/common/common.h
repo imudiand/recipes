@@ -7,3 +7,4 @@ int factorial_recursive(int num);
 double x_power_n_iterative(float x, int n);
 double x_power_n_recursive(float x, int n);
 double x_power_n_recursive_div_conquer(float x, int n);
+long max_subarray(int *list, int size);
