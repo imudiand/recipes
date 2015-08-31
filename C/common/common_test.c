@@ -21,4 +21,9 @@ int main(void) {
 	int list[10] = {3,4,2,1,-2,4,2,-2,1,-6};
 	printf("%ld\n", max_subarray(list,10));
 
+	printf("%s\n", "--- fibonacci iterative ---\n");
+	printf("%d\n", fib_iterative(7));
+
+
+	return 0;
 }

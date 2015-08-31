@@ -103,3 +103,27 @@ long max_subarray(int *list, int size) {
 	}
 	return max_num;
 }
+
+int fib_iterative(int num) {
+	if (num < 0) {
+		return -1;
+	}
+	if (num == 0) {
+		return 0;
+	}
+	if (num < 3) {
+		return 1;
+	}
+
+
+	int i;
+	int prev=1, res=1;
+	int temp;
+
+	for (i=3; i<=num; i++) {
+		temp = res;
+		res += prev;
+		prev = temp;
+	}
+	return res;
+}
