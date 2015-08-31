@@ -10,3 +10,4 @@ double x_power_n_recursive_div_conquer(float x, int n);
 long max_subarray(int *list, int size);
 int fib_iterative(int num);
 int fib_recursive(int num);
+void endianness(int num);

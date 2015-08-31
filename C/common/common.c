@@ -138,3 +138,20 @@ int fib_recursive(int num) {
 
 	return fib_recursive(num-1)+fib_recursive(num-2);
 }
+
+/*	
+	Little Endian: lower order byte in lowest address
+	Example: for int i = 1;
+	value:	0001 0000 0000 0000
+	addr: 	0x0	 0x1  0x2  0x3  	0x4
+	Here; lowest address is at location 0x0 & the value at that byte is 1;
+
+	Bign Endian: lower order byte in highest address
+*/
+void endianness(int num) {
+	if (*((char *)(&num)) == 1) {
+		printf("%s\n", "Little Endian");
+	} else {
+		printf("%s\n", "Big Engian");
+	}
+}

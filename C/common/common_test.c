@@ -27,6 +27,8 @@ int main(void) {
 	printf("%s\n", "--- fibonacci recursive ---\n");
 	printf("%d\n", fib_recursive(7));
 
+	printf("%s\n", "--- endianness ---\n");
+	endianness(1);
 
 	return 0;
 }
