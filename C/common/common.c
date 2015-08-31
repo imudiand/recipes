@@ -127,3 +127,14 @@ int fib_iterative(int num) {
 	}
 	return res;
 }
+
+int fib_recursive(int num) {
+	if (num<0)
+		return -1;
+	if (num == 0)
+		return 0;
+	if (num < 3)
+		return 1;
+
+	return fib_recursive(num-1)+fib_recursive(num-2);
+}

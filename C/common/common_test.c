@@ -24,6 +24,9 @@ int main(void) {
 	printf("%s\n", "--- fibonacci iterative ---\n");
 	printf("%d\n", fib_iterative(7));
 
+	printf("%s\n", "--- fibonacci recursive ---\n");
+	printf("%d\n", fib_recursive(7));
+
 
 	return 0;
 }
