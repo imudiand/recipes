@@ -15,9 +15,11 @@ from functools import wraps
 # Simple decorator example
 def tags_decor(func):
 	@wraps(func)
-	def func_wrapper(name):
+	def wrapper(name):
+		# wrapper func can do verifications on  arguments before calling func(name)
 		return "<p>%s</p>" % (func(name))
-	return func_wrapper
+		# wrapper func can do verifications/operations on the result after calling func(name)
+	return wrapper
 
 @tags_decor
 def get_text(name):
@@ -31,23 +33,23 @@ def get_text(name):
 
 def p_tags_decor(func):
 	@wraps(func)
-	def func_wrapper(name):
+	def wrapper(name):
 		return "<p>%s</p>" % (func(name))
-	return func_wrapper
+	return wrapper
 
 
 def div_tags_decor(func):
 	@wraps(func)
-	def func_wrapper(name):
+	def wrapper(name):
 		return "<div>%s</div>" % (func(name))
-	return func_wrapper
+	return wrapper
 
 
 def h1_tags_decor(func):
 	@wraps(func)
-	def func_wrapper(name):
+	def wrapper(name):
 		return "<h1>%s</h1>" % (func(name))
-	return func_wrapper
+	return wrapper
 
 @p_tags_decor
 @div_tags_decor
@@ -62,9 +64,11 @@ def get_text2(name):
 def tags(tagname):
 	def tags_decor(func):
 		@wraps(func)
-		def func_wrapper(name):
+		def wrapper(name):
+			# wrapper func can do verifications on  arguments before calling func(name)
 			return "<{0}>{1}</{0}>".format(tagname, func(name))
-		return func_wrapper
+			# wrapper func can do verifications/operations on the result after calling func(name)
+		return wrapper
 	return tags_decor
 
 @tags("p")
@@ -80,6 +84,8 @@ def get_text3(name):
 # testing code here
 
 def main():
+	#import pdb; pdb.set_trace()
+	# print get_text.__name__ return get_text if functools.wraps is used else returns wrapper
 	print get_text("Harshit")
 	print get_text2("Hemant")
 	print get_text3("Hemant")
